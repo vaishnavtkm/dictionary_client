@@ -1,0 +1,94 @@
+<div class="p-4">
+    <div class="flex justify-between">
+
+        <div class="normal flex font-poppins text-yellow-500 p-4">
+
+            <h1 class="text-4xl font-bold flex justify-center">Nord <span class="text-amber-800">Bite</span></h1>
+        </div>
+        <div class="normal items-center flex font-poppins  p-4">
+
+            <h4 class="text-xl flex pr-6 font-bold justify-center">29/08/2024</h4>
+        </div>
+        <label class="flex cursor-pointer p-8 gap-2">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <input type="checkbox" value="lemonade" class="toggle theme-controller" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <path
+                    d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+            </svg>
+        </label>
+    </div>
+    <!-- <div class="flex h-dvh w-full items-center justify-center">
+        <div class="bg-transparent rounded-box flex justify-center items-center h-[80px] w-28">
+            <h1 class="btn btn-outline bg-yellow-500 text-black">HELLO</h1>
+        </div>
+    </div> -->
+    <!-- <article class="prose w-full">
+        <h1>HELLO</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ex culpa expedita neque quos quod? Animi ad
+            laborum ex quia laboriosam, nesciunt debitis repudiandae illum, mollitia cum, iste at earum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error facere quas, voluptatem ad repellat ratione
+            pariatur ea tempore, eius ab beatae at aperiam perferendis vitae modi perspiciatis sed molestiae illo.</p>
+    </article> -->
+    <header class="flex justify-center mx-auto w-1/2 h-52">
+
+        <div class="diff relative ">
+            <!-- main word -->
+            <div class="diff-item-2 absolute inset-0 transition-opacity duration-500"
+                [ngClass]="{'opacity-100': !showItem1, 'opacity-0': showItem1}">
+                <div class="text-yellow-500 grid place-content-center text-9xl font-black">afdeling</div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="flex justify-center" *ngIf="showItem1">
+
+        <button class=" m-4 p-2 bg-transparent text-2xl rounded btn btn-outline" (click)="toggleItems()">Unveil Today's
+            Word</button>
+    </div>
+    <!-- !todo to insert to if condition -->
+
+    <article class="prose items-center mt-7 flex mx-auto justify-around">
+        <h2 class="pt-3 text-amber-800">Pronounciation</h2>
+        <span class="flex">
+            <h4>avˌde.lin</h4>
+            <button class="btn btn-outline" (click)="wordPronounciation()">Pronoune</button>
+        </span>
+    </article>
+    <article class="prose items-center justify-center mt-7 flex mx-auto justify-around">
+        <h2 class="pt-3 text-amber-800">English Alternative</h2>
+        <h4>department</h4>
+
+    </article>
+
+    <a href="#" class="group mt-7 relative block h-20 sm:h-80 lg:h-48">
+        <span class="absolute inset-0 border-2 border-dashed "></span>
+
+        <div
+            class="relative flex h-full transform items-center border-2 justify-center transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+            <div class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+
+
+                <h2 class="mt-4 text-2xl font-bold sm:text-2xl text-amber-800">Checkout for the Meaning</h2>
+            </div>
+
+            <div
+                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+                <h2 class="mt-4 text-xl font-medium sm:text-2xl">Go around the world</h2>
+
+
+
+            </div>
+        </div>
+    </a>
+
+
+
+</div>
