@@ -10,7 +10,7 @@ import { CalendarModule } from 'primeng/calendar';
   standalone: true,
   imports: [FormsModule,ColorPickerModule,CommonModule,CalendarModule, ReactiveFormsModule],
   templateUrl: './add-word.component.html',
-  styleUrl: './add-word.component.scss'
+  styleUrl: './add-word.component.scss',
 })
 export class AddWordComponent implements OnInit {
   constructor() { }
