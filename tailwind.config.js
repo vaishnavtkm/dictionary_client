@@ -43,7 +43,7 @@ module.exports = {
       "dim",
       "nord",
       "sunset",], // Add your preferred themes here
-    darkTheme: "forest", // Set the default theme for dark mode
+    darkTheme: "lemonade", // Set the default theme for dark mode
   },
   plugins: [require('daisyui'),require("@tailwindcss/typography")],
 }

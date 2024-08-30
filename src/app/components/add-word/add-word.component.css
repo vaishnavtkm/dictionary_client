@@ -1,1 +1,65 @@
-/*# sourceMappingURL=add-word.component.css.map */
+.form-shadow {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.23);
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-shadow:hover {
+  transform: translateY(-5px);
+}
+
+.custom-hover {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+  /* Dark mode styles */
+}
+.custom-hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000 0%, #000 50%, transparent 50%, transparent 100%);
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-in-out;
+}
+.custom-hover:hover {
+  color: #fff; /* Default to white text for light mode */
+}
+.custom-hover:hover:before {
+  transform: scaleX(1);
+}
+.custom-hover:hover::after {
+  content: "Send";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #fff;
+  transition: transform 0.4s ease-in-out;
+}
+.custom-hover:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.custom-hover > * {
+  position: relative;
+  z-index: 1;
+}
+@media (prefers-color-scheme: dark) {
+  .custom-hover {
+    color: #fff; /* Default to white text for dark mode */
+    border-color: #fff;
+  }
+  .custom-hover:before {
+    background: linear-gradient(135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+  }
+  .custom-hover:hover {
+    color: #000; /* Black text on hover for dark mode */
+  }
+  .custom-hover:hover::after {
+    color: #000; /* Black text for dark mode */
+  }
+}/*# sourceMappingURL=add-word.component.css.map */
