@@ -1,0 +1,66 @@
+[33mcommit 0d3e0dd354b1efd3c9ea4a890a48276649e6e4fc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mSrujan[m[33m, [m[1;31morigin/Srujan[m[33m)[m
+Author: Srujan Shivakumaraiah Murthy <srsmu@eg.dk>
+Date:   Mon Sep 2 12:38:19 2024 +0530
+
+    stash to main
+
+[33mcommit 26d0dc019d947d199815bdc23f0fd4f1aa2f0ed9[m
+Author: Srujan Shivakumaraiah Murthy <srsmu@eg.dk>
+Date:   Mon Sep 2 10:47:13 2024 +0530
+
+    Simple edits are done for the add word from
+
+[33mcommit 26c65a841457ce50f0d5894eaaaaeb93f9680234[m
+Merge: c8ba02d 4f5fc97
+Author: Srujan Shivakumaraiah Murthy <srsmu@eg.dk>
+Date:   Fri Aug 30 18:16:23 2024 +0530
+
+    first pull commit with merging
+
+[33mcommit c8ba02dbd2bd6942caa477838ab36c2d7c4f7f00[m
+Author: Srujan Shivakumaraiah Murthy <srsmu@eg.dk>
+Date:   Fri Aug 30 18:09:42 2024 +0530
+
+    first pull commit
+
+[33mcommit 4f5fc97e81f7fe5363f1b35aa77c23a9194cdb31[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Fri Aug 30 17:36:28 2024 +0530
+
+    homepage done
+
+[33mcommit 50501eec8fe573095f1de1256a332e7a50e873f6[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Fri Aug 30 12:18:09 2024 +0530
+
+    static homepage complete, dynamic WIP and forms WIP 2
+
+[33mcommit 1dd6c225db76c17f957636bb3f4e85dbc18a1006[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Fri Aug 30 12:14:42 2024 +0530
+
+    static homepage complete, dynamic WIP and forms WIP
+
+[33mcommit bca8adb56177a592ab952c17e33136be5c6adc21[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Thu Aug 29 18:17:07 2024 +0530
+
+    WIP 40%
+
+[33mcommit 90bcd61f14f0dfbaa98c7d2c6611913f38426aff[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Tue Aug 27 17:53:32 2024 +0530
+
+    Initialized dictionary frontend
+
+[33mcommit bc35100002a96da766db7ebc7d9603d412799a05[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Tue Aug 27 17:52:54 2024 +0530
+
+    first commit
+
+[33mcommit d7f418650f1c852b3e236b79d947806ff53a0644[m
+Author: vaishnavtkm <vaith@eg.dk>
+Date:   Tue Aug 27 17:47:43 2024 +0530
+
+    initial commit
