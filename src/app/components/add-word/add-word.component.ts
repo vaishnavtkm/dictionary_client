@@ -32,18 +32,30 @@ export class AddWordComponent implements OnInit {
   Pronounciation = new FormControl('', Validators.required);
   English_word = new FormControl('', Validators.required);
   Meaning = new FormControl('', Validators.required);
-  date = new FormControl('', Validators.required);
+  Date = new FormControl('', Validators.required);
 
   PostForm = new FormGroup({
     Danish_word: this.Danish_word,
     Pronounciation: this.Pronounciation,
     English_word: this.English_word,
     Meaning: this.Meaning,
-    date: this.date,
+    Date: this.Date
   });
   ngOnInit(): void {}
 
-  onPost() {
-   
+  onPost()
+  {
+    if(this.PostForm.valid)
+    {
+      const fromData: wordRequest = {
+        date: String(this.PostForm.value.Date),
+        dansih_word: String(this.PostForm.value.Danish_word),
+        pronounciation: String (this.PostForm.value.Pronounciation),
+        english_word:String (this.PostForm.value.English_word),
+        meaning: String(this.PostForm.value.Meaning)
+      }
+      console.log(this.PostForm.value);
+     
+    }
   }
 }
