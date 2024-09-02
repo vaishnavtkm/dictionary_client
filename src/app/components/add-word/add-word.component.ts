@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -11,6 +11,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { CalendarModule } from 'primeng/calendar';
 import { DictionaryServiceService } from '../../services/dictionary-service.service';
 import { wordRequest } from '../../Models/wordRequest';
+import { catchError, of } from 'rxjs';
+import { setAlternateWeakRefImpl } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'app-add-word',
@@ -24,9 +26,12 @@ import { wordRequest } from '../../Models/wordRequest';
   ],
   templateUrl: './add-word.component.html',
   styleUrl: './add-word.component.scss',
+  providers:[DatePipe]
 })
 export class AddWordComponent implements OnInit {
-  constructor(private SendService: DictionaryServiceService) {}
+  constructor(private SendService: DictionaryServiceService,
+    private datePipe: DatePipe
+  ) {}
 
   Danish_word = new FormControl('', Validators.required);
   Pronounciation = new FormControl('', Validators.required);
@@ -47,15 +52,25 @@ export class AddWordComponent implements OnInit {
   {
     if(this.PostForm.valid)
     {
+      const formatedDate = this.datePipe.transform(this.PostForm.value.Date, 'dd/MM/yyyy');
       const fromData: wordRequest = {
-        date: String(this.PostForm.value.Date),
+        date: formatedDate || '',
         dansih_word: String(this.PostForm.value.Danish_word),
         pronounciation: String (this.PostForm.value.Pronounciation),
         english_word:String (this.PostForm.value.English_word),
         meaning: String(this.PostForm.value.Meaning)
       }
-      console.log(this.PostForm.value);
-     
+      this.SendService.addWord(fromData)
+      .pipe(
+        catchError((error) => {
+          console.error('Error:', error);
+          return of(null);
+        })
+      )
+      .subscribe((data) => {  
+        alert('Word added successfully');
+    });
+    this.PostForm.reset();
     }
   }
 }
