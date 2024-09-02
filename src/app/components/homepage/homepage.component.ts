@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SpeakDanishService } from '../../services/speak-danish.service';
+import { ThemeServiceService } from '../../services/theme-service.service';
 
 @Component({
   selector: 'app-homepage',
@@ -10,5 +11,10 @@ import { SpeakDanishService } from '../../services/speak-danish.service';
   styleUrl: './homepage.component.scss',
 })
 export class HomepageComponent {
-  
+  constructor(private themeService: ThemeServiceService) {}
+  toggleTheme() {
+    const newTheme =
+      this.themeService.getTheme() === 'forest' ? 'lemonade' : 'forest';
+    this.themeService.setTheme(newTheme);
+  }
 }
