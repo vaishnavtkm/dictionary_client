@@ -17,4 +17,5 @@ export class DictionaryServiceService {
   getParticularWord(id: string): Observable<wordResponse> {
     return this.http.get<wordResponse>(this.baseUrl + id);
   }
+  
 }

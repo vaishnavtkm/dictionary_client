@@ -7,6 +7,82 @@
 //     transform: translateY(-5px);
 //   }
   
+  // .custom-hover {
+  //   position: relative;
+  //   overflow: hidden;
+  //   transition: color 0.4s ease-in-out;
+  
+  //   &:before {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: #000; /* Default to black for light mode */
+  //     z-index: 0;
+  //     transform: scaleX(0);
+  //     transform-origin: left;
+  //     transition: transform 0.4s ease-in-out;
+  //   }
+  
+  //   &:hover {
+  //     color: #fff; /* Default to white text for light mode */
+  
+  //     &:before {
+  //       transform: scaleX(1);
+  //     }
+  
+  //     &::after {
+  //       content: 'Send';
+  //       position: absolute;
+  //       top: 50%;
+  //       left: 50%;
+  //       transform: translate(-50%, -50%) scale(0);
+  //       color: #fff;
+  //       transition: transform 0.4s ease-in-out;
+  //     }
+  //   }
+  
+  //   &:hover::after {
+  //     transform: translate(-50%, -50%) scale(1);
+  //   }
+  
+  //   & > * {
+  //     position: relative;
+  //     z-index: 1;
+  //   }
+  
+    // /* Dark mode styles */
+    // @media (prefers-color-scheme: dark) {
+    //   color: #fff; /* Default to white text for dark mode */
+    //   border-color: #fff;
+  
+    //   &:before {
+    //     background-color: #fff; /* White fill for dark mode */
+    //   }
+  
+    //   &:hover {
+    //     color: #fff;
+    //     background-color: #fff; /* Black text on hover for dark mode */
+    //   }
+  
+    //   &:hover::after {
+    //     color: #fff;
+    //     background-color: #fff; /* Black text for dark mode */
+    //   }
+    // }
+  // }
+  // 
+// .form-shadow {
+//     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.23);
+//     transition: transform 0.3s ease-in-out;
+//   }
+  
+//   .form-shadow:hover {
+//     transform: translateY(-5px);
+//   }
+  
 //   .custom-hover {
 //     position: relative;
 //     overflow: hidden;
@@ -19,10 +95,10 @@
 //       left: 0;
 //       width: 100%;
 //       height: 100%;
-//       background-color: #000; /* Default to black for light mode */
+//       background: linear-gradient(135deg, #000 0%, #000 50%, transparent 50%, transparent 100%);
 //       z-index: 0;
 //       transform: scaleX(0);
-//       transform-origin: left;
+//       transform-origin: bottom left;
 //       transition: transform 0.4s ease-in-out;
 //     }
   
@@ -53,98 +129,22 @@
 //       z-index: 1;
 //     }
   
-//     // /* Dark mode styles */
-//     // @media (prefers-color-scheme: dark) {
-//     //   color: #fff; /* Default to white text for dark mode */
-//     //   border-color: #fff;
+//     /* Dark mode styles */
+//     @media (prefers-color-scheme: dark) {
+//       color: #fff; /* Default to white text for dark mode */
+//       border-color: #fff;
   
-//     //   &:before {
-//     //     background-color: #fff; /* White fill for dark mode */
-//     //   }
+//       &:before {
+//         background: linear-gradient(135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+//       }
   
-//     //   &:hover {
-//     //     color: #fff;
-//     //     background-color: #fff; /* Black text on hover for dark mode */
-//     //   }
+//       &:hover {
+//         color: #000; /* Black text on hover for dark mode */
+//       }
   
-//     //   &:hover::after {
-//     //     color: #fff;
-//     //     background-color: #fff; /* Black text for dark mode */
-//     //   }
-//     // }
+//       &:hover::after {
+//         color: #000; /* Black text for dark mode */
+//       }
+//     }
 //   }
-  
-.form-shadow {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.23);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .form-shadow:hover {
-    transform: translateY(-5px);
-  }
-  
-  .custom-hover {
-    position: relative;
-    overflow: hidden;
-    transition: color 0.4s ease-in-out;
-  
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #000 0%, #000 50%, transparent 50%, transparent 100%);
-      z-index: 0;
-      transform: scaleX(0);
-      transform-origin: bottom left;
-      transition: transform 0.4s ease-in-out;
-    }
-  
-    &:hover {
-      color: #fff; /* Default to white text for light mode */
-  
-      &:before {
-        transform: scaleX(1);
-      }
-  
-      &::after {
-        content: 'Send';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        color: #fff;
-        transition: transform 0.4s ease-in-out;
-      }
-    }
-  
-    &:hover::after {
-      transform: translate(-50%, -50%) scale(1);
-    }
-  
-    & > * {
-      position: relative;
-      z-index: 1;
-    }
-  
-    /* Dark mode styles */
-    @media (prefers-color-scheme: dark) {
-      color: #fff; /* Default to white text for dark mode */
-      border-color: #fff;
-  
-      &:before {
-        background: linear-gradient(135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
-      }
-  
-      &:hover {
-        color: #000; /* Black text on hover for dark mode */
-      }
-  
-      &:hover::after {
-        color: #000; /* Black text for dark mode */
-      }
-    }
-  }
   
