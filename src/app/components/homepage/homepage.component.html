@@ -1,11 +1,15 @@
 <div class="p-4">
     <div class="flex justify-between">
 
-        <div class="normal flex font-poppins text-yellow-500 p-4">
+        <div class="normal flex font-poppins text-yellow-500 cursor-pointer p-4" [routerLink]="'/'">
 
             <h1 class="text-4xl font-bold flex justify-center">Nord <span class="text-amber-800 pr-1">Bite</span></h1>
         </div>
 
+        <label class="flex cursor-pointer p-4 gap-2">
+
+            <button class="btn btn- btn-outline" [routerLink]="'/allwords'">HISTORY</button>
+        </label>
         <label class="flex cursor-pointer p-8 gap-2">
 
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
