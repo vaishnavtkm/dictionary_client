@@ -28,6 +28,7 @@ export class SinglewordComponent implements OnInit {
       this.id = value['id'];
       if (this.id) {
         this.patchValue(this.id);
+        this.showItem1 = false;
       }
     });
 
