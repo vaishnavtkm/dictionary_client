@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DictionaryServiceService } from '../../services/dictionary-service.service';
 import { Observable } from 'rxjs';
 import { wordResponse } from '../../Models/wordResponse';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-singleword',
@@ -18,9 +19,18 @@ export class SinglewordComponent implements OnInit {
   todayData!: wordResponse;
   constructor(
     private speakDanish: SpeakDanishService,
-    private dictionaryService: DictionaryServiceService
+    private dictionaryService: DictionaryServiceService,
+    private activatedRoute: ActivatedRoute
   ) {}
+  id!: string | null;
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((value) => {
+      this.id = value['id'];
+      if (this.id) {
+        this.patchValue(this.id);
+      }
+    });
+
     this.dictionaryWhole = this.dictionaryService.getAllWords();
     const today = this.formatDate(new Date());
     this.dictionaryService.getAllWords().subscribe((data: any[]) => {
@@ -32,6 +42,13 @@ export class SinglewordComponent implements OnInit {
           console.log(this.todayData.date);
         }
       });
+    });
+  }
+  // selecting a word from the list, patchin the values
+  patchValue(id: string) {
+    this.dictionaryService.getParticularWord(id).subscribe((res) => {
+      console.log('res:    ', res);
+      this.todayData = res;
     });
   }
 

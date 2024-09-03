@@ -21,14 +21,16 @@
 
 
     </header>
-
+    @if(!id){
     <div class="flex justify-center" *ngIf="showItem1">
 
         <button class=" m-4 p-2 bg-transparent text-2xl rounded btn btn-outline" (click)="toggleItems()">Unveil Today's
             Word</button>
     </div>
+    }
+
     <!-- !todo to insert to if condition -->
-    @if(!showItem1){
+    @if(!showItem1 || id){
 
     <div class="flex relative">
         <article class="items-center mt-7 flex mx-auto justify-center gap-56 transition-opacity duration-500">

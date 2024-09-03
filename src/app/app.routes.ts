@@ -6,6 +6,7 @@ import { AllwordsComponent } from './components/allwords/allwords.component';
 
 export const routes: Routes = [
   { path: '', component: SinglewordComponent },
+  { path: 'singleword/:id', component: SinglewordComponent },
   { path: 'addword', component: AddWordComponent },
   { path: 'allwords', component: AllwordsComponent },
 ];
