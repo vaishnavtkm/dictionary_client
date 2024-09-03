@@ -5,6 +5,7 @@ import { DictionaryServiceService } from '../../services/dictionary-service.serv
 import { Observable } from 'rxjs';
 import { wordResponse } from '../../Models/wordResponse';
 import { ActivatedRoute } from '@angular/router';
+import { ElevenlabsttsService } from '../../services/elevenlabstts.service';
 
 @Component({
   selector: 'app-singleword',
@@ -20,7 +21,8 @@ export class SinglewordComponent implements OnInit {
   constructor(
     private speakDanish: SpeakDanishService,
     private dictionaryService: DictionaryServiceService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private elevenlabstts: ElevenlabsttsService
   ) {}
   id!: string | null;
   ngOnInit(): void {
@@ -29,21 +31,23 @@ export class SinglewordComponent implements OnInit {
       if (this.id) {
         this.patchValue(this.id);
         this.showItem1 = false;
+      } else {
+        this.dictionaryWhole = this.dictionaryService.getAllWords();
+        const today = this.formatDate(new Date());
+        this.dictionaryService.getAllWords().subscribe((data: any[]) => {
+          const isTodayInData = data.some((item) => {
+            const itemDate = item.date; // Assuming item.dateField contains the date
+            if (itemDate === today) {
+              this.todayData = item;
+              this.danishText = item.dansih_word;
+              console.log(this.todayData.date);
+            }
+          });
+        });
       }
     });
-
-    this.dictionaryWhole = this.dictionaryService.getAllWords();
-    const today = this.formatDate(new Date());
-    this.dictionaryService.getAllWords().subscribe((data: any[]) => {
-      const isTodayInData = data.some((item) => {
-        const itemDate = item.date; // Assuming item.dateField contains the date
-        if (itemDate === today) {
-          this.todayData = item;
-          this.danishText = item.dansih_word;
-          console.log(this.todayData.date);
-        }
-      });
-    });
+    if (!this.id) {
+    }
   }
   // selecting a word from the list, patchin the values
   patchValue(id: string) {
@@ -67,8 +71,18 @@ export class SinglewordComponent implements OnInit {
     this.showItem1 = !this.showItem1;
   }
 
-  wordPronounciation(): void {
-    this.speakDanish.speakDanish(this.danishText, 'da-DK');
+  async wordPronounciation() {
+    // exising service below:
+
+    // this.speakDanish.speakDanish(this.danishText, 'da-DK');
+    const voice_id: string = 'cgSgspJ2msm6clMCkdW9';
+    const audioBlob = await this.elevenlabstts.convertTextToSpeech(
+      this.todayData.dansih_word,
+      voice_id
+    );
+    const audioUrl = URL.createObjectURL(audioBlob);
+    const audio = new Audio(audioUrl);
+    audio.play();
   }
 
   getAWord(id: string) {}
