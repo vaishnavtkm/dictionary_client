@@ -47,4 +47,8 @@
           background-clip: text;
   color: transparent;
   animation: moveGradient 3s linear infinite;
+}
+
+* {
+  cursor: none;
 }/*# sourceMappingURL=singleword.component.css.map */

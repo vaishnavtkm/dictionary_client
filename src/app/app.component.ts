@@ -15,7 +15,7 @@ import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.
     SinglewordComponent,
     AddWordComponent,
     CalendarModule,
-    CustomCursorComponent
+    CustomCursorComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -16,4 +16,8 @@
           background-clip: text;
   color: transparent;
   animation: moveGradient 5s linear infinite;
+}
+
+* {
+  cursor: none;
 }/*# sourceMappingURL=homepage.component.css.map */

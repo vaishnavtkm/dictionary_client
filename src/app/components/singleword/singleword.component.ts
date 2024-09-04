@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
 import { wordResponse } from '../../Models/wordResponse';
 import { ActivatedRoute } from '@angular/router';
 import { ElevenlabsttsService } from '../../services/elevenlabstts.service';
+import { CustomCursorComponent } from '../custom-cursor/custom-cursor.component';
 
 @Component({
   selector: 'app-singleword',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,CustomCursorComponent],
   templateUrl: './singleword.component.html',
   styleUrl: './singleword.component.scss',
 })

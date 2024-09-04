@@ -24,7 +24,8 @@
     @if(!id){
     <div class="flex justify-center" *ngIf="showItem1">
 
-        <button class=" m-4 p-2 bg-transparent text-2xl rounded btn btn-outline" (click)="toggleItems()">Unveil Today's
+        <button class=" m-4 p-2 bg-transparent hover-target text-2xl rounded btn btn-outline"
+            (click)="toggleItems()">Unveil Today's
             Word</button>
     </div>
     }
@@ -37,7 +38,8 @@
             <h2 class="text-3xl font-semibold text-amber-800">Pronounciation</h2>
             <span class="flex text-2xl">
                 <h4 class="mt-2 me-4">{{todayData && todayData.pronounciation}}</h4>
-                <button class="btn btn-outline absolute ml-52" (click)="wordPronounciation()">Pronoune</button>
+                <button class="btn btn-outline hover-target absolute ml-52"
+                    (click)="wordPronounciation()">Pronoune</button>
             </span>
 
         </article>
