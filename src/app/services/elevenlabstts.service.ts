@@ -7,6 +7,7 @@ export class ElevenlabsttsService {
   private apiKey = 'sk_2e1a287765972f683e5afddb1756a1f5fe86ce1587cd4c6a';
   private voicesUrl = 'https://api.elevenlabs.io/v1/voices';
   private ttsUrl = `https://api.elevenlabs.io/v1/text-to-speech`;
+
   constructor() {}
   async getVoices(): Promise<any> {
     const response = await axios.get(this.voicesUrl, {

@@ -75,10 +75,11 @@ export class SinglewordComponent implements OnInit {
     // exising service below:
 
     // this.speakDanish.speakDanish(this.danishText, 'da-DK');
+    const languageCode = 'da';
     const voice_id: string = 'cgSgspJ2msm6clMCkdW9';
     const audioBlob = await this.elevenlabstts.convertTextToSpeech(
       this.todayData.dansih_word,
-      voice_id
+      voice_id,
     );
     const audioUrl = URL.createObjectURL(audioBlob);
     const audio = new Audio(audioUrl);
