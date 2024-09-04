@@ -1,7 +1,7 @@
 <div class="pl-8">
     <div class="normal items-center justify-center flex font-poppins  p-4" *ngIf=!showItem1>
 
-        <h4 class="text-xl flex font-bold justify-center">{{todayData.date}}</h4>
+        <h4 class="text-xl flex font-bold justify-center">{{ todayData && todayData.date}}</h4>
     </div>
     <header class="flex justify-center mx-auto w-1/2 sm:w-dvw h-52">
 
@@ -11,9 +11,9 @@
             <div class="diff-item-2 absolute inset-0 transition-opacity duration-500"
                 [ngClass]="{'opacity-100': !showItem1, 'opacity-0': showItem1}">
 
-                <div class="text-yellow-500 grid place-content-center text-9xl font-black">
+                <div class="custom-gradient grid place-content-center text-9xl font-black">
 
-                    <p>{{todayData.dansih_word}}
+                    <p>{{todayData && todayData.dansih_word}}</p>
                 </div>
             </div>
 
@@ -24,7 +24,8 @@
     @if(!id){
     <div class="flex justify-center" *ngIf="showItem1">
 
-        <button class=" m-4 p-2 bg-transparent text-2xl rounded btn btn-outline" (click)="toggleItems()">Unveil Today's
+        <button class=" m-4 p-2 bg-transparent hover-target text-2xl rounded btn btn-outline"
+            (click)="toggleItems()">Unveil Today's
             Word</button>
     </div>
     }
@@ -36,8 +37,9 @@
         <article class="items-center mt-7 flex mx-auto justify-center gap-56 transition-opacity duration-500">
             <h2 class="text-3xl font-semibold text-amber-800">Pronounciation</h2>
             <span class="flex text-2xl">
-                <h4 class="mt-2 me-4">{{todayData.pronounciation}}</h4>
-                <button class="btn btn-outline absolute ml-52" (click)="wordPronounciation()">Pronoune</button>
+                <h4 class="mt-2 me-4">{{todayData && todayData.pronounciation}}</h4>
+                <button class="btn btn-outline hover-target absolute ml-52"
+                    (click)="wordPronounciation()">Pronoune</button>
             </span>
 
         </article>
@@ -45,7 +47,7 @@
     </div>
     <article class="items-center me-10 justify-center gap-44 mt-7 flex mx-auto">
         <h2 class="text-3xl me-11 font-semibold pt-3 text-amber-800">English Alternative</h2>
-        <h4 class="text-2xl">{{todayData.english_word}}</h4>
+        <h4 class="text-2xl">{{todayData && todayData.english_word}}</h4>
 
     </article>
 
@@ -62,7 +64,7 @@
 
             <div
                 class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
-                <h2 class="mt-4 text-xl font-medium sm:text-2xl">{{todayData.meaning}}</h2>
+                <h2 class="mt-4 text-xl font-medium sm:text-2xl">{{todayData && todayData.meaning}}</h2>
 
 
 

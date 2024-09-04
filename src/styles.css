@@ -3,4 +3,8 @@
 @import "primeng/resources/primeng.css";
 @tailwind base;
 @tailwind components;
-@tailwind utilities;/*# sourceMappingURL=styles.css.map */
+@tailwind utilities;
+html, body {
+  overflow-x: hidden;
+  cursor: none;
+}/*# sourceMappingURL=styles.css.map */

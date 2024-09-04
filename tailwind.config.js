@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       fontFamily:{
         'poppins':['Poppins'],
+      },
+      cursor:{
+        'custom-cursor':'url(/assets/cursor.png), auto',
       }
     }
   },

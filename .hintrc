@@ -17,7 +17,8 @@
       "default",
       {
         "ignore": [
-          "-webkit-tap-highlight-color"
+          "-webkit-tap-highlight-color",
+          "user-select"
         ]
       }
     ],

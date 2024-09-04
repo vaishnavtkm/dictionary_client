@@ -17,7 +17,7 @@
     </div>
     @for(item of dictionaryWords$ |async ;track item.id){
 
-    <div class="card mb-4 hover:cursor-pointer mt-4 mr-[2%] bg-transparent shadow-lg rounded-lg border border-yellow-500 "
+    <div class="card mb-4 hover-target mt-4 mr-[2%] bg-transparent shadow-lg rounded-lg border border-yellow-500 "
         (click)="openWord(item.id)">
         <div class="card-body p-6 ">
             <div class="grid grid-cols-4 gap-4">
