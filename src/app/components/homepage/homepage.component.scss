@@ -1,0 +1,22 @@
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+  }
+  
+  .custom-gradient {
+    background: linear-gradient(to right, rgb(234 179 8), rgb(146 64 14));
+    background-size: 200% 200%;
+    background-clip: text;
+    color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+  
+ 
+ 
