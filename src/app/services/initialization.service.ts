@@ -6,7 +6,7 @@ import { delay, Observable, of } from 'rxjs';
 })
 export class InitializationService {
   initializeApp(): Observable<any> {
-    return of(true).pipe(delay(3000));
+    return of(true).pipe(delay(2500));
   }
   constructor() {}
 }

@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    @for(item of dictionaryWords$ |async ;track item.id){
+    @for(item of sortedWords$ |async ;track item.id){
 
     <div class="card mb-4 hover-target mt-4 mr-[2%] bg-transparent shadow-lg rounded-lg border border-yellow-500 "
         (click)="openWord(item.id)">
