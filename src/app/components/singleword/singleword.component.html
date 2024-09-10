@@ -3,7 +3,7 @@
 
         <h4 class="text-xl flex font-bold justify-center">{{ todayData && todayData.date}}</h4>
     </div>
-    <header class="flex justify-center mx-auto w-1/2 sm:w-dvw h-52">
+    <header class="flex justify-center mx-auto w-1/2vh sm:w-full h-52">
 
         <div class="diff relative ">
 
@@ -11,7 +11,7 @@
             <div class="diff-item-2 absolute inset-0 transition-opacity duration-500"
                 [ngClass]="{'opacity-100': !showItem1, 'opacity-0': showItem1}">
 
-                <div class="custom-gradient grid place-content-center text-9xl font-black">
+                <div class="custom-gradient grid place-content-center lg:text-9xl md:text-8xl sm:text-7xl font-black">
 
                     <p>{{todayData && todayData.dansih_word}}</p>
                 </div>
@@ -38,7 +38,9 @@
             <h2 class="text-3xl font-semibold text-amber-800">Pronounciation</h2>
             <span class="flex text-2xl">
                 <h4 class="mt-2 me-4">{{todayData && todayData.pronounciation}}</h4>
-                <button class="btn btn-outline hover-target  " (click)="wordPronounciation()">Pronoune</button>
+                <button class="btn btn-outline hover-target border-r-2 border-l-2 " (click)="wordPronounciation()">
+                    <i class="ri-volume-up-line"></i>
+                </button>
             </span>
 
         </article>

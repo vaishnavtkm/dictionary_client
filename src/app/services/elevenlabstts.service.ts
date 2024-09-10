@@ -21,28 +21,33 @@ export class ElevenlabsttsService {
   }
 
   async convertTextToSpeech(text: string, voiceId: string): Promise<Blob> {
-    const response = await axios.post(
-      `${this.ttsUrl}/${voiceId}/stream`,
-      {
-        text: text,
-        model_id: 'eleven_multilingual_v2',
-        voice_settings: {
-          stability: 0.5,
-          similarity_boost: 0.8,
-          style: 0.0,
-          use_speaker_boost: true,
+    try {
+      const response = await axios.post(
+        `${this.ttsUrl}/${voiceId}/stream`,
+        {
+          text: text,
+          model_id: 'eleven_multilingual_v2',
+          voice_settings: {
+            stability: 0.5,
+            similarity_boost: 0.8,
+            style: 0.0,
+            use_speaker_boost: true,
+          },
         },
-      },
-      {
-        headers: {
-          Accept: 'application/json',
-          'xi-api-key': this.apiKey,
-          'Content-Type': 'application/json',
-        },
-        responseType: 'blob',
-      }
-    );
+        {
+          headers: {
+            Accept: 'application/json',
+            'xi-api-key': this.apiKey,
+            'Content-Type': 'application/json',
+          },
+          responseType: 'blob',
+        }
+      );
 
-    return response.data;
+      return response.data;
+    } catch (error) {
+      console.error('Error generating speech:', error);
+      throw error;
+    }
   }
 }
